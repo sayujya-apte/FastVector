@@ -220,6 +220,9 @@ namespace Apte
 					//     * placement new operator allows us to separate those two things
 					//     * new (address) dtype (initializer)
 					//     * because allocate() returns raw uninitialized memory, it is necessary to use placement new to construct the object inside that memory
+
+					// also, std::vector uses std::allocator which adds an abstraction overhead
+					// we are allocating memory directly
 					new (newData + i) T(std::move(m_Data[i]));
 				}
 			}
