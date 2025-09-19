@@ -1,12 +1,13 @@
-#include <iostream>
 #include "FastVector.h"
 #include <chrono>
+#include <iostream>
 #include <vector>
 
-int main() {
+int main()
+{
     int N = 10'000'000;
 
-    auto t1 = std::chrono::high_resolution_clock::now();
+    auto                  t1 = std::chrono::high_resolution_clock::now();
     Apte::FastVector<int> fv;
     for (int i = 0; i < N; i++)
     {
@@ -14,7 +15,7 @@ int main() {
     }
     auto t2 = std::chrono::high_resolution_clock::now();
 
-    auto t3 = std::chrono::high_resolution_clock::now();
+    auto             t3 = std::chrono::high_resolution_clock::now();
     std::vector<int> sv;
     for (int i = 0; i < N; i++)
     {
